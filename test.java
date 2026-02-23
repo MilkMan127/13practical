@@ -50,3 +50,18 @@ BufferedReader br = new BufferedReader(
         for (int i = 0; i < repetitions; i++) {
 
             int randomKey = 1 + rand.nextInt(32654);
+             long start = System.nanoTime();
+            linearsearch(array, randomKey);
+            long finish = System.nanoTime();
+
+            double time = (finish - start) / 1_000_000.0; // ms
+            linearTime += time;
+            linearTime2 += time * time;
+            start = System.nanoTime();
+            binarysearch(array, randomKey);
+            finish = System.nanoTime();
+
+            time = (finish - start) / 1_000_000.0; // ms
+            binaryTime += time;
+            binaryTime2 += time * time;
+        }
