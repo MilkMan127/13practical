@@ -53,3 +53,21 @@ public class timeMethods {
             binaryTime += time;
             binaryTime2 += time * time;
         }
+         double linearAvg = linearTime / repetitions;
+        double linearStd = Math.sqrt(
+                (linearTime2 - repetitions * linearAvg * linearAvg)
+                        / (repetitions - 1));
+
+        double binaryAvg = binaryTime / repetitions;
+        double binaryStd = Math.sqrt(
+                (binaryTime2 - repetitions * binaryAvg * binaryAvg)
+                        / (repetitions - 1));
+
+        System.out.println("\nRESULTS");
+        System.out.println("=====================================");
+        System.out.println("Linear Search Average (ms): " + fiveD.format(linearAvg));
+        System.out.println("Linear Search Std Dev (ms): " + fourD.format(linearStd));
+        System.out.println();
+        System.out.println("Binary Search Average (ms): " + fiveD.format(binaryAvg));
+        System.out.println("Binary Search Std Dev (ms): " + fourD.format(binaryStd));
+        System.out.println("=====================================");
