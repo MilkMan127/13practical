@@ -74,3 +74,20 @@ double linearAve = linearTime / repetitions;
         double binaryStd = Math.sqrt(
                 (binaryTime2 - repetitions * binaryAve * binaryAve)
                         / (repetitions - 1));
+System.out.println("\nSTATISTICS");
+        System.out.println("____________________________________");
+
+        System.out.println("\nLinear Search:");
+        System.out.println("Average time = " + fiveD.format(linearAve) + " ms");
+        System.out.println("Standard deviation = "
+                + fourD.format(linearStd) + " ms");
+
+        System.out.println("\nBinary Search:");
+        System.out.println("Average time = " + fiveD.format(binaryAve) + " ms");
+        System.out.println("Standard deviation = "
+                + fourD.format(binaryStd) + " ms");
+
+        System.out.println("\nRepetitions = " + repetitions);
+        System.out.println("n = " + N);
+        System.out.println("____________________________________");
+    }
