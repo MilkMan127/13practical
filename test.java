@@ -65,3 +65,12 @@ BufferedReader br = new BufferedReader(
             binaryTime += time;
             binaryTime2 += time * time;
         }
+double linearAve = linearTime / repetitions;
+        double linearStd = Math.sqrt(
+                (linearTime2 - repetitions * linearAve * linearAve)
+                        / (repetitions - 1));
+
+        double binaryAve = binaryTime / repetitions;
+        double binaryStd = Math.sqrt(
+                (binaryTime2 - repetitions * binaryAve * binaryAve)
+                        / (repetitions - 1));
