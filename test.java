@@ -41,3 +41,12 @@ BufferedReader br = new BufferedReader(
         }
 
         br.close();
+ int repetitions = 30;
+        Random rand = new Random();
+
+        double linearTime = 0, linearTime2 = 0;
+        double binaryTime = 0, binaryTime2 = 0;
+
+        for (int i = 0; i < repetitions; i++) {
+
+            int randomKey = 1 + rand.nextInt(32654);
