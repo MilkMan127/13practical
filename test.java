@@ -88,4 +88,12 @@ public class timeMethods {
 
         br.close();
     }
+public static Node linearSearch(int key) {
+        for (int i = 0; i < actualSize; i++) {
+            if (records[i].key == key) {
+                return records[i];
+            }
+        }
+        return null;
+    }
 
