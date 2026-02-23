@@ -71,3 +71,21 @@ public class timeMethods {
         System.out.println("Binary Search Average (ms): " + fiveD.format(binaryAvg));
         System.out.println("Binary Search Std Dev (ms): " + fourD.format(binaryStd));
         System.out.println("=====================================");
+    }
+     public static void readFile(String filename) throws Exception {
+
+        records = new Node[N];
+
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            String[] parts = line.split("\\s+", 2);
+            int key = Integer.parseInt(parts[0]);
+            String data = parts.length > 1 ? parts[1] : "";
+            records[actualSize++] = new Node(key, data);
+        }
+
+        br.close();
+    }
+
