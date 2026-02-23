@@ -1,1 +1,13 @@
-//comment 1
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.Random;
+
+class Node {
+    int key;
+    String data;
+
+    Node(int k, String d) {
+        key = k;
+        data = d;
+    }
+}
