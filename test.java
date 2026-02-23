@@ -96,4 +96,23 @@ public static Node linearSearch(int key) {
         }
         return null;
     }
+    public static Node binarySearch(int key) {
+
+        int low = 0;
+        int high = actualSize - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (records[mid].key == key)
+                return records[mid];
+            else if (records[mid].key < key)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+
+        return null;
+    }
+}
 
