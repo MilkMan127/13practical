@@ -23,3 +23,21 @@ public class timeMethods {
         DecimalFormat fourD = new DecimalFormat("0.0000");
     }
 }
+BufferedReader br = new BufferedReader(
+                new FileReader("ulysses.numbered"));
+
+        String line;
+        int index = 0;
+
+        while ((line = br.readLine()) != null && index < N) {
+
+            // assuming format: key space data
+            String[] parts = line.split(" ", 2);
+
+            int key = Integer.parseInt(parts[0]);
+            String data = parts[1];
+
+            array[index++] = new Node(key, data);
+        }
+
+        br.close();
