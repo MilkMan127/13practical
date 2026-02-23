@@ -36,3 +36,20 @@ public class timeMethods {
         for (int r = 0; r < repetitions; r++) {
 
             int randomKey = rand.nextInt(32654) + 1;
+            start = System.nanoTime();
+            linearSearch(randomKey);
+            finish = System.nanoTime();
+
+            time = (finish - start) / 1_000_000.0; 
+            linearTime += time;
+            linearTime2 += time * time;
+
+            // ----- Binary Search Timing -----
+            start = System.nanoTime();
+            binarySearch(randomKey);
+            finish = System.nanoTime();
+
+            time = (finish - start) / 1_000_000.0; 
+            binaryTime += time;
+            binaryTime2 += time * time;
+        }
