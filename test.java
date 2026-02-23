@@ -90,4 +90,33 @@ System.out.println("\nSTATISTICS");
         System.out.println("\nRepetitions = " + repetitions);
         System.out.println("n = " + N);
         System.out.println("____________________________________");
+    } 
+static Node linearsearch(Node[] arr, int key) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].key == key)
+                return arr[i];
+        }
+        return null;
+    }static Node binarysearch(Node[] arr, int key) {
+
+        int low = 0;
+        int high = arr.length - 1;
+
+        while (low <= high) {
+
+            int mid = (low + high) / 2;
+
+            if (arr[mid].key == key)
+                return arr[mid];
+
+            else if (arr[mid].key < key)
+                low = mid + 1;
+
+            else
+                high = mid - 1;
+        }
+
+        return null;
     }
+} 
